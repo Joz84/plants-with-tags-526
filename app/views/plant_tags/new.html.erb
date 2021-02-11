@@ -1,0 +1,16 @@
+<div class="container text-center">
+
+  <h1>Add tag to <%= @plant.name %></h1>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <%= simple_form_for [@plant, @plant_tag] do |f| %>
+      <%#= simple_form_for :plant_tag, url: plant_plant_tags_path(@plant), method: :post do |f| %>
+        <%= f.input :tag, collection: Tag.all, include_hidden: false, input_html: { multiple: true } %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
